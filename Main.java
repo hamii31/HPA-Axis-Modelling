@@ -1,15 +1,14 @@
 /**
  * Churilov, A.N., Milton, J.G. Modeling pulsativity in the hypothalamic–pituitary–adrenal hormonal axis. Sci Rep 12, 8480 (2022). https://doi.org/10.1038/s41598-022-12513-w
- * TO-DO Add Plotting? 
  */
 
 public class Main {
     public static SimulationResult ultradianCycle(HypothalamicNuclei h, AnteriorPituitary p, AdrenalGland a) {
         double dt = 0.01;
-        int totalTime = 1440;
+        int totalTime = 1440; // 24h
         int numSteps = (int) (totalTime / dt);
         int delaySteps = (int) Math.round(a.delay / dt);
-        int recordEvery = 10; // save every 0.1 min
+        int recordEvery = 500; // save every 5 minutes
 
         double A = p.init_A;
         double A_delayed;
@@ -27,7 +26,7 @@ public class Main {
             // Hypothalamic input
             double H = h.H_t(t);
 
-            // Record current state before updating
+            // Record before update
             if (n % recordEvery == 0) result.record(t, H, V, A, C);
 
             // Compute delayed ACTH
@@ -64,6 +63,7 @@ public class Main {
         AnteriorPituitary p = new AnteriorPituitary();
         AdrenalGland a = new AdrenalGland();
 
-        SimulationResult _ = ultradianCycle(h, p, a);
+        SimulationResult result = ultradianCycle(h, p, a);
+        result.display();
     }
 }
