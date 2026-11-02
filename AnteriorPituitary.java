@@ -4,7 +4,7 @@ public class AnteriorPituitary {
     final private double k_a = 0.7; // degradation rate of ACTH
     final private double k_ah = 60; // drive from hypothalamus to pituitary
     final private double A_0 = 0.6; // permanent component of ACTH pulsation rate
-    final private double k_s = 0.1;
+    final private double k_s = 0.5;  // decay rate of V
     final private double k_v = 0.005; // leakage rate of V
     final private double V_0 = 0.05; // minimum action potential;
     final private double k_vh = 0.055; // drive from hypothalamus to V
