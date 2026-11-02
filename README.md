@@ -1,5 +1,6 @@
 # HPA - Hypothalamic–Pituitary–Adrenal Axis Pulsatility Model
 [![DOI](https://zenodo.org/badge/1443112988.svg)](https://doi.org/10.5281/zenodo.23890132)
+
 A computational implementation of the HPA axis pulsatility model described in:
 
 > Churilov, A.N. and Milton, J.G. (2022) 'Modeling pulsativity in the hypothalamic–pituitary–adrenal hormonal axis', *Scientific Reports*, 12, 8480.
