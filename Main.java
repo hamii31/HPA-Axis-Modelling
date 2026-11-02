@@ -3,7 +3,7 @@
  */
 
 public class Main {
-    public static SimulationResult ultradianCycle(HypothalamicNuclei h, AnteriorPituitary p, AdrenalGland a) {
+    public static SimulationResult simulation(HypothalamicNuclei h, AnteriorPituitary p, AdrenalGland a) {
         double dt = 0.01;
         int totalTime = 1440; // 24h
         int numSteps = (int) (totalTime / dt);
@@ -63,7 +63,7 @@ public class Main {
         AnteriorPituitary p = new AnteriorPituitary();
         AdrenalGland a = new AdrenalGland();
 
-        SimulationResult result = ultradianCycle(h, p, a);
+        SimulationResult result = simulation(h, p, a);
         result.display();
     }
 }
